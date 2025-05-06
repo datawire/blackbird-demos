@@ -1,0 +1,160 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "AI Chatbot API",
+    "description": "API for interacting with an AI-powered chatbot. This API allows users to send messages to the chatbot and receive responses. It also includes a health check endpoint to ensure the service is operational.",
+    "version": "1.0.0",
+    "contact": {
+      "name": "Matt Voget",
+      "url": "https://support.example.com",
+      "email": "support@example.com"
+    }
+  },
+  "tags": [
+    {
+      "name": "Chatbot",
+      "description": "Operations related to the AI chatbot"
+    },
+    {
+      "name": "Health",
+      "description": "Health check operations"
+    }
+  ],
+  "paths": {
+    "/chat": {
+      "post": {
+        "tags": [
+          "Chatbot"
+        ],
+        "summary": "Send a message to the chatbot",
+        "description": "This endpoint allows users to send a message to the AI chatbot and receive a response.",
+        "operationId": "sendMessage",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MessageRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful response from the chatbot",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Chatbot not found"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/health": {
+      "get": {
+        "tags": [
+          "Health"
+        ],
+        "summary": "Check the health of the service",
+        "description": "This endpoint checks the health status of the AI chatbot service.",
+        "operationId": "healthCheck",
+        "responses": {
+          "200": {
+            "description": "Service is healthy",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HealthStatus"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Service is unhealthy"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "MessageRequest": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string",
+            "description": "The message content sent to the chatbot.",
+            "example": "Hello, how can I help you today?"
+          }
+        },
+        "required": [
+          "message"
+        ],
+        "additionalProperties": false
+      },
+      "MessageResponse": {
+        "type": "object",
+        "properties": {
+          "user": {
+            "type": "string",
+            "description": "The current user",
+            "example": "Matt"
+          },
+          "response": {
+            "type": "string",
+            "description": "The response from the chatbot.",
+            "example": "I'm here to assist you! What do you need help with?"
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time",
+            "description": "The timestamp when the response was generated.",
+            "example": "2023-10-01T12:00:00Z"
+          }
+        },
+        "required": [
+          "user",
+          "response",
+          "timestamp"
+        ],
+        "additionalProperties": false
+      },
+      "HealthStatus": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "description": "The health status of the service.",
+            "example": "healthy"
+          },
+          "message": {
+            "type": "string",
+            "description": "A message providing additional information about the health status.",
+            "example": "The service is running smoothly."
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time",
+            "description": "The timestamp when the health check was performed.",
+            "example": "2023-10-01T12:00:00Z"
+          }
+        },
+        "required": [
+          "status",
+          "message",
+          "timestamp"
+        ],
+        "additionalProperties": false
+      }
+    }
+  }
+}

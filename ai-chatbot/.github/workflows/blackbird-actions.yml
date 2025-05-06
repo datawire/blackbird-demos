@@ -1,0 +1,21 @@
+name: Blackbird Actions
+run-name: Updating Blackbird APIs and mocks
+on: [push]
+jobs:
+  Blackbird-Actions:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Update Blackbird APIs and Mocks
+        env:
+          BLACKBIRD_TOKEN: ${{ secrets.BLACKBIRD_TOKEN }}
+        run: |
+          # Download Blackbird
+          sudo mkdir -p /usr/local/bin
+          sudo curl -fL 'https://blackbird.a8r.io/api/download/cli/v1.10.2/linux/amd64' -o /usr/local/bin/blackbird
+          sudo chmod a+x /usr/local/bin/blackbird
+          blackbird version
+          blackbird api list
+
+          # Update the API
+          blackbird api update "AI Chatbot API" -s ai-chatbot-oas.json

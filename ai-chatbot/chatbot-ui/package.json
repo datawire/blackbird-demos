@@ -1,0 +1,21 @@
+{
+  "name": "chatbot-ui",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "NODE_ENV=development next dev --turbopack",
+    "mock": "NODE_ENV=test next dev --turbopack",
+    "build": "next build",
+    "start": "next start -p 80",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@mui/icons-material": "^6.4.4",
+    "@mui/material": "^6.4.4",
+    "next": "15.1.7",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  }
+}

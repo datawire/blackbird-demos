@@ -1,0 +1,4 @@
+# Copy contents into .env.dev and .env.prod
+AI_KEY=OPENAI_API_KEY
+AI_URL=OPENAI_URL
+PORT=3001

@@ -1,0 +1,2 @@
+# Copy contents into .env.development, .env.production, and .env.test
+NEXT_PUBLIC_SERVER_URL=CHATBOT_SERVER_URL
