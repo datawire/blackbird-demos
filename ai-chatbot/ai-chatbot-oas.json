@@ -5,9 +5,9 @@
     "description": "API for interacting with an AI-powered chatbot. This API allows users to send messages to the chatbot and receive responses. It also includes a health check endpoint to ensure the service is operational.",
     "version": "1.0.0",
     "contact": {
-      "name": "Matt Voget",
-      "url": "https://support.example.com",
-      "email": "support@example.com"
+      "name": "Ambassador",
+      "url": "https://getambassador.io",
+      "email": "support@datawire.io"
     }
   },
   "tags": [
@@ -93,7 +93,7 @@
           "message": {
             "type": "string",
             "description": "The message content sent to the chatbot.",
-            "example": "Hello, how can I help you today?"
+            "example": "How can I enhance my API development?"
           }
         },
         "required": [
@@ -107,12 +107,12 @@
           "user": {
             "type": "string",
             "description": "The current user",
-            "example": "Matt"
+            "example": "Edgy"
           },
           "response": {
             "type": "string",
             "description": "The response from the chatbot.",
-            "example": "I'm here to assist you! What do you need help with?"
+            "example": "Hello! This is an example of a static response from the chatbot!"
           },
           "timestamp": {
             "type": "string",
