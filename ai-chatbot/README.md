@@ -6,7 +6,7 @@ The AI Chatbot is a NextJS app that sits on top of a simple Restful API powered 
 
 The UI makes calls to the Restful API to submit a chat message. The API proxies those requests to OpenAI and serves responses back to the UI.
 
-TODO - insert diagram
+[chatbot-architecture](docs/chatbot-ai-architecture.png)
 
 ## Setting up Blackbird
 1. Installation
