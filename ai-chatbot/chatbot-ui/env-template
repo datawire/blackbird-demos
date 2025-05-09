@@ -1,2 +1,3 @@
-# Copy contents into .env.development, .env.production, and .env.test
+# Copy contents into .env.development, .env.test, and .env.production
 NEXT_PUBLIC_SERVER_URL=CHATBOT_SERVER_URL
+NEXT_PUBLIC_UI_PATH=chatbot-ui
