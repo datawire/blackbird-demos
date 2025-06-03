@@ -1,0 +1,12 @@
+{
+    "mcpServers": {
+        "weatherMcp": {
+            "type": "sse",
+            "url": "https://default-e019b956.blackbird-relay.a8r.io/weather-mcp/sse"
+        },
+        "postgresMcp": {
+            "type": "sse",
+            "url": "https://default-e019b956.blackbird-relay.a8r.io/postgres-mcp/sse"
+        }
+    }
+}

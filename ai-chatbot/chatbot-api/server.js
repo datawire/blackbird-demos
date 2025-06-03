@@ -40,7 +40,7 @@ app.post('/chat', function (req, res, next) {
     .then(response => {
       if (response.data.choices[0]) {
         const chatResponse = response.data.choices[0].message.content;
-        //const chatResponse = "Response from a code run instance! I am debugging an issue right now...";
+        //const chatResponse = "Response from a code run instance! Matt is debugging an issue right now...";
 
         res.send({ response: chatResponse, timestamp: new Date().toISOString() })
       } else {
