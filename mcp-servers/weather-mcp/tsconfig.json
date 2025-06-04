@@ -11,7 +11,8 @@
         "forceConsistentCasingInFileNames": true
     },
     "include": [
-        "src/**/*"
+        "src/**/*",
+        "node_modules/@modelcontextprotocol"
     ],
     "exclude": [
         "node_modules"
